@@ -11,7 +11,7 @@ terraform {
     organization = "CrutoiAlexandru"
 
     workspaces {
-      name = "bachelor-thesis-aws"
+      name = "aws-server"
     }
   }
 }

@@ -21,10 +21,10 @@ provider "aws" {
 }
 
 resource "aws_budgets_budget" "basic-budget" {
-  name         = "basic-monthly-budget"
-  budget_type  = "COST"
-  limit_amount = "1"
-  limit_unit   = "USD"
+  name              = "basic-monthly-budget"
+  budget_type       = "COST"
+  limit_amount      = "1"
+  limit_unit        = "USD"
   time_period_start = "2023-01-01_00:00"
   time_unit         = "MONTHLY"
 

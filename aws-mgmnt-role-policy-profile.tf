@@ -24,7 +24,5 @@ resource "aws_iam_role_policy_attachment" "mgmnt-policy-attachment" {
 resource "aws_iam_instance_profile" "mgmnt-profile" {
   name = "mgmnt-profile"
 
-  roles = [
-    aws_iam_role.mgmnt-role.name,
-  ]
+  role = aws_iam_role.mgmnt-role.name
 }

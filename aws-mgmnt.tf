@@ -6,4 +6,8 @@ resource "aws_instance" "server-mgmnt" {
   vpc_security_group_ids      = [aws_security_group.aws-mgmnt-sg.id]
 
   iam_instance_profile = aws_iam_instance_profile.mgmnt-profile.name
+
+  tags = {
+    Name = "server-mgmnt"
+  }
 }

@@ -12,7 +12,7 @@ resource "aws_iam_role" "mgmnt-role" {
           Service = [
             "ec2.amazonaws.com",
             "ec2-instance-connect.amazonaws.com"
-            ]
+          ]
         }
       }
     ]

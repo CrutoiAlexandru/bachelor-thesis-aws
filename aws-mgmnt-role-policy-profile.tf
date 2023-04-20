@@ -5,7 +5,7 @@ resource "aws_iam_role" "mgmnt-role" {
     Version = "2012-10-17"
     Statement = [
       {
-        Action = "sts:AssumeRole"
+        Action = "*"
         Effect = "Allow"
         Principal = {
           Service = [
@@ -18,13 +18,13 @@ resource "aws_iam_role" "mgmnt-role" {
   })
 }
 
-resource "aws_iam_role_policy_attachment" "mgmnt-policy-attachment" {
+resource "aws_iam_role_policy_attachment" "mgmnt-ec2-policy-attachment" {
   policy_arn = "arn:aws:iam::aws:policy/AmazonEC2FullAccess"
   role       = aws_iam_role.mgmnt-role.name
 }
 
 resource "aws_iam_role_policy_attachment" "mgmnt-instance-connect-policy-attachment" {
-  policy_arn = "arn:aws:iam::aws:policy/AmazonSSMManagedInstanceCore"
+  policy_arn = "arn:aws:iam::aws:policy/EC2InstanceConnect"
   role       = aws_iam_role.mgmnt-role.name
 }
 

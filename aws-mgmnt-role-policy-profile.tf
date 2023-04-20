@@ -6,14 +6,9 @@ resource "aws_iam_role" "mgmnt-role" {
     Version = "2012-10-17"
     Statement = [
       {
-        Action = "sts:AssumeRole"
+        Action = "*"
         Effect = "Allow"
-        Principal = {
-          Service = [
-            "ec2.amazonaws.com",
-            "ec2-instance-connect.amazonaws.com"
-          ]
-        }
+        Resource = "*"
       }
     ]
   })

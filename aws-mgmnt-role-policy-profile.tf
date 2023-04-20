@@ -6,6 +6,13 @@ resource "aws_iam_role" "mgmnt-role" {
     Version = "2012-10-17"
     Statement = [
       {
+        Action = [
+          "ec2-instance-connect:SendSSHPublicKey"
+        ]
+        Effect   = "Allow"
+        Resource = "*"
+      },
+      {
         Action = "sts:AssumeRole"
         Effect = "Allow"
         Principal = {

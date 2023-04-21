@@ -19,3 +19,19 @@ terraform {
 provider "aws" {
   region = "eu-central-1"
 }
+
+module "ec2" {
+  source = "./modules/ec2"
+}
+
+module "budget" {
+  source = "./modules/budget"
+}
+
+module "iam" {
+  source = "./modules/iam"
+}
+
+module "sg" {
+  source = "./modules/sg"
+}

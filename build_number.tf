@@ -6,7 +6,7 @@ variable "RDS_PASSWORD" {
   type = string
 }
 
-resource "aws_db_instance" "build-number" {
+resource "aws_db_instance" "build_number" {
   allocated_storage = 20
   engine            = "mysql"
   engine_version    = "5.7"

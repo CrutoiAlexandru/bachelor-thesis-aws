@@ -40,7 +40,7 @@ jobs:
         id: plan
         if: github.event_name == 'pull_request'
         env:
-          USER: ${{ secrets.RDS_USER }}
+          USER: ${{ secrets.RDS_USERNAME }}
           PASSWORD: ${{ secrets.RDS_PASSWORD }}
         run: terraform plan -no-color -input=false
         continue-on-error: true
@@ -82,6 +82,6 @@ jobs:
       - name: Terraform Apply
         if: github.ref == 'refs/heads/main' && github.event_name == 'push'
         env:
-          USER: ${{ secrets.RDS_USER }}
+          USER: ${{ secrets.RDS_USERNAME }}
           PASSWORD: ${{ secrets.RDS_PASSWORD }}
         run: terraform apply -auto-approve -input=false

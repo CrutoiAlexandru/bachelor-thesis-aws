@@ -1,7 +1,10 @@
-resource "aws_db_security_group" "build-number-sg" {
+resource "aws_security_group" "build-number-sg" {
   name = "build-number-sg"
 
   ingress {
-    cidr = "0.0.0.0/0"
+    from_port = 3306
+    to_port = 3306
+    protocol = "tcp"
+    cidr_blocks = ["0.0.0.0/0"]
   }
 }

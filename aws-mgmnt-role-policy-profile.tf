@@ -10,7 +10,8 @@ resource "aws_iam_role" "mgmnt-role" {
         Principal = {
           Service = [
             "ec2.amazonaws.com",
-            "ec2-instance-connect.amazonaws.com"
+            "ec2-instance-connect.amazonaws.com",
+            "rds.amazonaws.com"
           ]
         }
       }
@@ -25,6 +26,11 @@ resource "aws_iam_role_policy_attachment" "mgmnt-ec2-policy-attachment" {
 
 resource "aws_iam_role_policy_attachment" "mgmnt-instance-connect-policy-attachment" {
   policy_arn = "arn:aws:iam::aws:policy/EC2InstanceConnect"
+  role       = aws_iam_role.mgmnt-role.name
+}
+
+resource "aws_iam_role_policy_attachment" "mgmnt-db-policy-attachment" {
+  policy_arn = "arn:aws:iam::aws:policy/AmazonRDSFullAccess"
   role       = aws_iam_role.mgmnt-role.name
 }
 

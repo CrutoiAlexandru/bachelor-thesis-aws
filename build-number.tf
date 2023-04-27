@@ -18,5 +18,5 @@ resource "aws_db_instance" "build_number" {
   publicly_accessible       = true
   skip_final_snapshot       = true
   final_snapshot_identifier = "build-number-final-snapshot"
-  vpc_security_group_ids    = [aws_db_security_group.build-number-sg.id]
+  vpc_security_group_ids    = [aws_security_group.build-number-sg.id]
 }

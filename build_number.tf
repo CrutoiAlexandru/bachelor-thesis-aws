@@ -16,4 +16,5 @@ resource "aws_db_instance" "build_number" {
   username            = var.RDS_USERNAME
   password            = var.RDS_PASSWORD
   publicly_accessible = true
+  skip_final_snapshot = true
 }

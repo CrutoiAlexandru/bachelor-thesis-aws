@@ -7,12 +7,13 @@ variable "RDS_PASSWORD" {
 }
 
 resource "aws_db_instance" "build_number" {
-  allocated_storage = 20
-  db_name           = "build_number"
-  engine            = "mysql"
-  engine_version    = "5.7"
-  instance_class    = "db.t3.micro"
-  name              = "build_number"
-  username          = var.RDS_USERNAME
-  password          = var.RDS_PASSWORD
+  allocated_storage   = 20
+  identifier          = "build_number"
+  engine              = "mysql"
+  engine_version      = "5.7"
+  instance_class      = "db.t3.micro"
+  db_name             = "build_number"
+  username            = var.RDS_USERNAME
+  password            = var.RDS_PASSWORD
+  publicly_accessible = true
 }

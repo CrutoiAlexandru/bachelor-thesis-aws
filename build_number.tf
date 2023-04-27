@@ -8,7 +8,7 @@ variable "RDS_PASSWORD" {
 
 resource "aws_db_instance" "build_number" {
   allocated_storage   = 20
-  identifier          = "build_number"
+  identifier          = "build-number"
   engine              = "mysql"
   engine_version      = "5.7"
   instance_class      = "db.t3.micro"

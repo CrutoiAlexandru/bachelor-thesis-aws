@@ -12,7 +12,7 @@ resource "aws_db_instance" "build_number" {
   engine              = "mysql"
   engine_version      = "5.7"
   instance_class      = "db.t3.micro"
-  db_name             = "build_number"
+  name                = "build_number"
   username            = var.RDS_USERNAME
   password            = var.RDS_PASSWORD
   publicly_accessible = true
